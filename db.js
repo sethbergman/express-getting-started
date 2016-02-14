@@ -1,4 +1,5 @@
-var uri = 'mongodb://localhost:27017/test';
+// var uri = 'mongodb://localhost:27017/test';
+var uri = 'mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo';
 
 var _ = require('lodash');
 var mongoose = require('mongoose');
