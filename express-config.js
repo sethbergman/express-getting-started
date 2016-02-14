@@ -4,6 +4,9 @@ var fs = require('fs');
 var engines = require('consolidate');
 var JSONStream = require('JSONStream');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var MongoStore = require('connect-mongo')(session);
+
 
 var User = require('./db').User;
 
@@ -52,14 +55,13 @@ app.get('/error/:username', function (req, res) {
   res.status(404).send('No user named ' + req.params.username + ' found');
 });
 
-var userRouter = require('./username');
-app.use('/:username', userRouter);
-
-var server = app.listen(3000, function () {
-  console.log('Server running at http://localhost:' + server.address().port);
-});
-
-//var port = process.env.PORT || 3000;
-//app.listen(port, function() {
-//  console.log('Server started at port number: ', port);
-//});
+module.exports.expressSetup = function(app){
+  app.set('port', process.env.PORT || 3000);
+  app.use(session({
+    store: new MongoStore({
+      url: process.env.MONGOLAB_URI
+    }),
+    resave: true,
+    saveUninitialized: true
+  }));
+}
