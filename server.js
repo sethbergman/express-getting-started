@@ -1,7 +1,6 @@
 var express  = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-var _ = require('lodash');
 
 var userSchema = mongoose.Schema({
   username: String,
