@@ -1,4 +1,4 @@
-var uri = process.env.MONGOLAB_URI;
+var uri = 'MONGOLAB_URI';
 
 var _ = require('lodash');
 var mongoose = require('mongoose');
