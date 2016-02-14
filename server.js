@@ -2,7 +2,7 @@ var express  = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
 
-var uri = process.env.MONGOLAB_URI;
+var uri = 'MONGOLAB_URI';
 var _ = require('lodash');
 mongoose.connect(uri);
 
