@@ -1,3 +1,4 @@
+/*
 var mongoose  = require('mongoose');
 
 function makeDefaultConnection() {
@@ -13,3 +14,4 @@ function makeDefaultConnection() {
 }
 
 module.exports.defaultConnection = makeDefaultConnection();
+*/

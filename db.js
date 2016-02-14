@@ -1,17 +1,29 @@
-// var uri = 'mongodb://127.0.0.1:27017/test';
-var uri = 'mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo';
+// [uncomment this line for local testing] var uri = 'mongodb://localhost:27017/test';
+var mongoose  = require('mongoose');
+
+function makeDefaultConnection() {
+  var uri = process.env.MONGOLAB_URI;
+
+  mongoose.connect(uri, {}, function(err, db){
+    if(err){
+      console.log('Connection Error ::: ', err);
+    } else {
+      console.log('Successfully Connected!');
+    }
+  });
+}
+
+module.exports.defaultConnection = makeDefaultConnection();
 
 var _ = require('lodash');
 var mongoose = require('mongoose');
-// mongoose.connect('mongodb://127.0.0.1:27017/test');
-mongoose.connect('mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo');
+mongoose.connect(uri);
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
   console.log('db connected');
 });
-
-
 
 var userSchema = mongoose.Schema({
   username: String,
