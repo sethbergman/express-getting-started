@@ -1,11 +1,15 @@
 {
-  "name": "express-getting-started",
+  "name": "express-mongo-handlebars",
   "version": "1.0.0",
-  "description": "Getting Started with Express and Handlebars",
+  "description": "Getting Started with Express, MongoDB and Handlebars",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sethbergman/express-mongo-handlebars"
   },
   "keywords": [
     "node.js",
