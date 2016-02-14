@@ -2,7 +2,7 @@ var express  = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
 
-var userSchema = mongoose.Schema({
+userSchema = new mongoose.Schema({
   username: String,
   gender: String,
   name: {
@@ -29,6 +29,7 @@ userSchema.virtual('name.full').set(function (value) {
 });
 
 exports.User = mongoose.model('User', userSchema);
+
 
 /*
  * I’m sharing my credentials here.
