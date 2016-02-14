@@ -58,8 +58,3 @@ app.use('/:username', userRouter);
 var server = app.listen(3000, function () {
   console.log('Server running at http://localhost:' + server.address().port);
 });
-
-//var port = process.env.PORT || 3000;
-//app.listen(port, function() {
-//  console.log('Server started at port number: ', port);
-//});
