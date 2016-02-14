@@ -1,16 +1,7 @@
 var express  = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
-
-var uri = 'MONGOLAB_URI';
 var _ = require('lodash');
-mongoose.connect(uri);
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function (callback) {
-  console.log('db connected');
-});
 
 var userSchema = mongoose.Schema({
   username: String,
