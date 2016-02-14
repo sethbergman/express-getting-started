@@ -3,6 +3,7 @@ var mongoose  = require('mongoose');
 
 function makeDefaultConnection() {
   var uri = process.env.MONGOLAB_URI;
+  var db = mongoose.connection;
 
   mongoose.connect(uri, {}, function(err, db){
     if(err){
@@ -13,9 +14,8 @@ function makeDefaultConnection() {
   });
 }
 
-module.exports.defaultConnection = makeDefaultConnection();
-
 var _ = require('lodash');
+/*
 var mongoose = require('mongoose');
 mongoose.connect(uri);
 
@@ -24,7 +24,7 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
   console.log('db connected');
 });
-
+*/
 var userSchema = mongoose.Schema({
   username: String,
   gender: String,
@@ -52,3 +52,5 @@ userSchema.virtual('name.full').set(function (value) {
 });
 
 exports.User = mongoose.model('User', userSchema);
+
+module.exports.defaultConnection = makeDefaultConnection();
