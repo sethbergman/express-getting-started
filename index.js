@@ -57,4 +57,8 @@ app.use('/:username', userRouter);
 
 var server = app.listen(3000, function () {
   console.log('Server running at http://localhost:' + server.address().port);
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 05e69e7892a6bf23417c5ecee7214fe08507a83c
