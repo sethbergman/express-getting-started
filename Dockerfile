@@ -1,6 +1,6 @@
 FROM ubuntu
 
-RUN apt-get install -y python-software-properties python python-setuptools ruby rubygems
+RUN apt-get install -y python-software-properties python python-setuptools
 RUN add-apt-repository ppa:chris-lea/node.js
 RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
 RUN apt-get update
