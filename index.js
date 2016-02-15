@@ -57,8 +57,15 @@ app.use('/:username', userRouter);
 
 var server = app.listen(3000, function () {
   console.log('Server running at http://localhost:' + server.address().port);
-<<<<<<< HEAD
-});
-=======
-});
->>>>>>> 05e69e7892a6bf23417c5ecee7214fe08507a83c
+
+var MONGO_DB;
+var DOCKER_DB = process.env.DB_PORT;
+if ( DOCKER_DB ) {
+  MONGO_DB = DOCKER_DB.replace( 'tcp', 'mongodb' ) + '/myapp';
+} else {
+  MONGO_DB = process.env.MONGODB;
+}
+var retry = 0;
+mongoose.connect(MONGO_DB);
+
+app.listen(process.env.PORT || 3000);
