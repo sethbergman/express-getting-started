@@ -2,7 +2,8 @@ db:
   image: mongo
   ports:
     - "27017:27017"
-  command: "--smallfiles --logpath=/dev/null"
+  entrypoint: /entrypoint.sh mongo
+  command: "mongoimport --db test --collection users --drop --file user_list.json"
 web:
   build: .
   command: node app.js
