@@ -58,6 +58,7 @@ app.use('/:username', userRouter);
 var server = app.listen(3000, function () {
   console.log('Server running at http://localhost:' + server.address().port);
 
+/*
 var MONGO_DB;
 var DOCKER_DB = process.env.DB_PORT;
 if ( DOCKER_DB ) {
@@ -69,3 +70,5 @@ var retry = 0;
 mongoose.connect(MONGO_DB);
 
 app.listen(process.env.PORT || 3000);
+
+*/
