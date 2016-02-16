@@ -1,9 +1,8 @@
-// var uri = 'mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo';
-var uri = process.env.DOKKU_MONGO_RED_URL
 'use strict';
+var uri = process.env.MONGO_URL;
 
 module.exports = {
-    db: process.env.DOKKU_MONGO_RED_URL,
+    db: process.env.MONGO_URL,
  // db: 'mongodb://localhost/mean-test',
 }
 

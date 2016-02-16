@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/favicon.ico', function (req, res) {
   res.end();
 });
-/*
+
 app.get('/', function (req, res) {
   User.find({}, function (err, users) {
     if (err) console.error(err);
     res.render('index', {users: users});
   });
 });
-*/
+
 
 app.get('*.json', function (req, res) {
   res.download('./users/' + req.path, 'virus.exe');
