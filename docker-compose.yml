@@ -14,5 +14,6 @@ web:
   links:
     - db
   environment:
-    PORT: 3000 # this is optional, allows express to use process.env.PORT instead of a raw 3000
+  MONGODB=$MONGO_URL  
+  # PORT: 3000 # this is optional, allows express to use process.env.PORT instead of a raw 3000
     
