@@ -1,5 +1,12 @@
 // var uri = 'mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo';
-var uri = process.env.MONGO_URL
+// var uri = process.env.MONGO_URL
+'use strict';
+
+module.exports = {
+    db: process.env.MONGO_URL,
+ // db: 'mongodb://localhost/mean-test',
+}
+
 var _ = require('lodash');
 var mongoose = require('mongoose');
 mongoose.connect(uri);
