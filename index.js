@@ -5,7 +5,7 @@ var engines = require('consolidate');
 var JSONStream = require('JSONStream');
 var bodyParser = require('body-parser');
 
-var User = require('./db').User;
+//var User = require('./db').User;
 
 app.engine('hbs', engines.handlebars);
 
@@ -55,7 +55,7 @@ app.get('/error/:username', function (req, res) {
 var userRouter = require('./username');
 app.use('/:username', userRouter);
 
-var server = app.listen(3000, function () {
+var server = app.listen(5000, function () {
   console.log('Server running at http://express-mongo-handlebars.iocloudstack.com:' + server.address().port);
 });
 

@@ -3,7 +3,7 @@ var uri = process.env.DOKKU_MONGO_RED_URL
 'use strict';
 
 module.exports = {
-    db: process.env.MDOKKU_MONGO_RED_URL,
+    db: process.env.DOKKU_MONGO_RED_URL,
  // db: 'mongodb://localhost/mean-test',
 }
 
