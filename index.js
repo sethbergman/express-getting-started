@@ -5,7 +5,7 @@ var engines = require('consolidate');
 var JSONStream = require('JSONStream');
 var bodyParser = require('body-parser');
 
-//var User = require('./db').User;
+var User = require(process.env.MONGO_URL).User;
 
 app.engine('hbs', engines.handlebars);
 
@@ -18,13 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/favicon.ico', function (req, res) {
   res.end();
 });
-
+/*
 app.get('/', function (req, res) {
   User.find({}, function (err, users) {
     if (err) console.error(err);
     res.render('index', {users: users});
   });
 });
+*/
 
 app.get('*.json', function (req, res) {
   res.download('./users/' + req.path, 'virus.exe');
@@ -55,7 +56,7 @@ app.get('/error/:username', function (req, res) {
 var userRouter = require('./username');
 app.use('/:username', userRouter);
 
-var server = app.listen(5000, function () {
+var server = app.listen(3000, function () {
   console.log('Server running at http://express-mongo-handlebars.iocloudstack.com:' + server.address().port);
 });
 
