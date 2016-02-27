@@ -7,7 +7,10 @@ var engines = require('consolidate')
 var JSONStream = require('JSONStream')
 var bodyParser = require('body-parser')
 
-app.engine('hbs', engines.handlebars)
+var User = require(process.env.MONGO_URL).User;
+
+app.engine('hbs', engines.handlebars);
+
 
 app.set('views', './views')
 app.set('view engine', 'hbs')
@@ -34,6 +37,7 @@ app.get('/', function (req, res) {
     })
   })
 })
+
 
 app.get('*.json', function (req, res) {
   res.download('./users/' + req.path, 'virus.exe')
@@ -69,7 +73,7 @@ var server = app.listen(5000, function () {
 })
 
 
-/*
+/**
 var MONGO_DB;
 var DOCKER_DB = process.env.DB_PORT;
 if ( DOCKER_DB ) {
@@ -80,5 +84,6 @@ if ( DOCKER_DB ) {
 var retry = 0;
 mongoose.connect(MONGO_DB);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 5000);
 */
+
