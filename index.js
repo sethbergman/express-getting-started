@@ -64,8 +64,8 @@ app.get('/error/:username', function (req, res) {
 var userRouter = require('./username')
 app.use('/:username', userRouter)
 
-var server = app.listen(3000, function () {
-  console.log('Server running at http://localhost:' + server.address().port)
+var server = app.listen(5000, function () {
+  console.log('Server running at 0.0.0.0:' + server.address().port)
 })
 
 
