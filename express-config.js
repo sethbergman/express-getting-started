@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
+const path = require('path')
 var engines = require('consolidate');
 var JSONStream = require('JSONStream');
 var bodyParser = require('body-parser');
@@ -15,7 +16,7 @@ app.engine('hbs', engines.handlebars);
 app.set('views', './views');
 app.set('view engine', 'hbs');
 
-app.use('/profilepics', express.static('images'));
+app.use('/profilepics', path.join(express.static('images')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/favicon.ico', function (req, res) {
@@ -56,7 +57,7 @@ app.get('/error/:username', function (req, res) {
 });
 
 module.exports.expressSetup = function(app){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 5000);
   app.use(session({
     store: new MongoStore({
       url: process.env.MONGOLAB_URI

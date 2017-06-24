@@ -1,10 +1,7 @@
-// var uri = 'mongodb://127.0.0.1:27017/test';
-var uri = 'mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo';
-
+var uri = 'mongodb://emh:emhpass@ds135592.mlab.com:35592/emhtest' || process.env.MONGOLAB_URI;
 var _ = require('lodash');
 var mongoose = require('mongoose');
-// mongoose.connect('mongodb://127.0.0.1:27017/test');
-mongoose.connect('mongodb://express-mongo:65fe67162433087bca93aaa832e3bf56@dokku-mongo-express-mongo:27017/express-mongo');
+mongoose.connect('mongodb://localhost:27017/emhtest');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {

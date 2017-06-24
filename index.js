@@ -55,11 +55,8 @@ app.get('/error/:username', function (req, res) {
 var userRouter = require('./username');
 app.use('/:username', userRouter);
 
-var server = app.listen(3000, function () {
+var port = process.env.PORT || 5000;
+
+var server = app.listen(process.env.PORT || 5000, function () {
   console.log('Server running at http://localhost:' + server.address().port);
 });
-
-//var port = process.env.PORT || 3000;
-//app.listen(port, function() {
-//  console.log('Server started at port number: ', port);
-//});
