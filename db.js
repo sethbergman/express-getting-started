@@ -3,7 +3,7 @@ var uri = process.env.MONGO_URL;
 
 module.exports = {
     db: process.env.MONGO_URL,
- // db: 'mongodb://localhost/mean-test',
+  //  db: 'mongodb://localhost/mean-test',
 }
 
 var _ = require('lodash');
