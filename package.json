@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -27,9 +29,11 @@
     "jade": "^1.11.0",
     "lodash": "^3.10.0",
     "mongodb": "^2.1.7",
-    "mongoose": "^4.4.3"
+    "mongoose": "^4.4.3",
+    "snyk": "^1.41.1"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"
-  }
+  },
+  "snyk": true
 }
